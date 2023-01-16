@@ -1,0 +1,13 @@
+"""
+Title: Workers With The Highest Salaries
+Description: Find the titles of workers that earn the highest salary. Output the highest-paid title or multiple titles that share the highest salary.
+"""
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+#title.head()
+
+new = pd.merge(worker, title, left_on = 'worker_id', right_on = 'worker_ref_id').sort_values('salary', ascending = False)
+new1 = new[['worker_title']][new['salary'] == new['salary'].max()]
+new1
